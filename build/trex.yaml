@@ -1,0 +1,22 @@
+provider:
+  name: aws
+  version: ~> 3.2
+  region: us-east-1 
+  profile: default
+
+api_name: apiname
+   
+functions:
+- lambda_name: getOrders
+  lambda_runtime: go1.x
+  method: GET
+  path: orders
+- lambda_name: addOrders
+  lambda_runtime: go1.x
+  method: POST
+  path: orders
+- lambda_name: getOrder
+  lambda_runtime: go1.x
+  method: GET
+  root_path: orders
+  path: "{id}"
